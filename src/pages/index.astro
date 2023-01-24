@@ -1,4 +1,8 @@
 ---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
 const pageTitle = "Home Page";
 ---
 
@@ -11,11 +15,12 @@ const pageTitle = "Home Page";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <a href="/portfolio/">Portfolio</a>
+    <Header />
     <h1>Bryson Best</h1>
     <h1>{pageTitle}</h1>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
