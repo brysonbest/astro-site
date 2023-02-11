@@ -1,7 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 
 const identity = {
@@ -24,61 +23,35 @@ const skills = [
   "Python",
   "Writing Documentation",
 ];
-
-const skillColor = "navy";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <h1>Bryson Best</h1>
-    <h1>{pageTitle}</h1>
-    <h2>Welcome to my personal site</h2>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Welcome to my personal site</h2>
 
+  <p>
+    I am a full-stack developer working with open-source projects to provide
+    freelance services and build accessible, inclusive products for the web.
+  </p>
+
+  <!-- <p>I offer freelance full-stack development services.</p> -->
+
+  <p>Some quick facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName} {identity.lastName}.</li>
+    <li>
+      I live in {identity.country} and currently work as a {
+        identity.occupation
+      }.
+    </li>
+    <p>Some of my hobbies include:</p>
     <p>
-      I am a full-stack developer working with open-source projects to provide
-      freelance services and build accessible, inclusive products for the web.
+      <ul>
+        {identity.hobbies.map((each) => <li>{each}</li>)}
+      </ul>
     </p>
-
-    <!-- <p>I offer freelance full-stack development services.</p> -->
-
-    <p>Some quick facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName} {identity.lastName}.</li>
-      <li>
-        I live in {identity.country} and currently work as a {
-          identity.occupation
-        }.
-      </li>
-      <p>Some of my hobbies include:</p>
-      <p>
-        <ul>
-          {identity.hobbies.map((each) => <li>{each}</li>)}
-        </ul>
-      </p>
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>

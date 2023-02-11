@@ -1,27 +1,11 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const pageTitle = "Porfolio";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <h1>Bryson Best</h1>
-    <h1>{pageTitle}</h1>
-    <h2>Take a look at some of my projects</h2>
-    <p>Just a snapshot of some of my projects.</p>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Take a look at some of my projects</h2>
+  <p>Just a snapshot of some of my projects.</p>
+</BaseLayout>
