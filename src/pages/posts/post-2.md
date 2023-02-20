@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Second Blog Post"
 pubDate: 2023-01-22
 description: "This is the second post of my new blog."
@@ -8,12 +9,6 @@ image:
   alt: "The Astro logo with the word One."
 tags: ["astro", "blogging", "learning in public"]
 ---
-
-# My Second Blog Post
-
-Published on: 2023-01-22
-
-This is a test of the astro blogging platform
 
 ## Second Heading
 
