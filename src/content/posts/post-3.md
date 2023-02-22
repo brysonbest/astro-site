@@ -1,8 +1,7 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
-title: "Second Blog Post"
+title: "Third Blog Post"
 pubDate: 2023-01-22
-description: "This is the second post of my new blog."
+description: "This is the Third post of my new blog."
 author: "Astro Learner"
 image:
   url: "https://astro.build/assets/blog/astro-1-release-update/cover.jpeg"
