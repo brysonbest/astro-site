@@ -18,9 +18,11 @@ const { pageTitle } = Astro.props || {};
   <body>
     <ParaScroll />
     <Header />
-    <h1>Bryson Best</h1>
-    <h1>{pageTitle}</h1>
-    <slot />
+    <div class="page-content">
+      <h1>Bryson Best</h1>
+      <h1>{pageTitle}</h1>
+      <slot />
+    </div>
     <Footer />
     <script>
       import "../scripts/menu.js";
