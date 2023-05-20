@@ -8,5 +8,5 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), image()]
+  integrations: [preact(), image()],
 });
