@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import ParaScroll from "../components/ParaScroll.astro";
 
 const { pageTitle } = Astro.props || {};
 ---
@@ -15,6 +16,7 @@ const { pageTitle } = Astro.props || {};
     <title>{pageTitle}</title>
   </head>
   <body>
+    <ParaScroll />
     <Header />
     <h1>Bryson Best</h1>
     <h1>{pageTitle}</h1>

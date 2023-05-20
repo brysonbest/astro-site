@@ -1,0 +1,41 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+---
+
+<div class="scroll" data-speed="3.9">
+  <Image
+    src={import("../assets/images/cool-background.png")}
+    widths={[100]}
+    aspectRatio={0.47}
+    class="coolbackground"
+    alt="coolbackground"
+  />
+</div>
+
+<script type="module">
+  function enableParallax() {
+    const isMac =
+      navigator.userAgentData?.platform.toLowerCase().includes("mac") ||
+      navigator.platform?.toLowerCase().includes("mac");
+
+    const isChrome = navigator.userAgent.toLowerCase().includes("chrome");
+
+    // Laggy behavior on chrome and mac with parallax scrolling
+
+    if (isMac && isChrome) return;
+
+    const targets = document.querySelectorAll(".scroll");
+
+    window.addEventListener("scroll", () => {
+      const offset = window.scrollY / 10;
+
+      targets.forEach((target) => {
+        target.style.transform = `translateY(${
+          offset * target.dataset.speed
+        }px)`;
+      });
+    });
+  }
+
+  enableParallax();
+</script>
