@@ -1,11 +1,13 @@
 ---
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
+import PersonalLogo from "./PersonalLogo.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header>
-  <nav>
+  <nav class="navbar-header">
+    <PersonalLogo />
     <div class="header-bar-constant">
       <Hamburger />
     </div>
@@ -16,30 +18,12 @@ import ThemeIcon from "./ThemeIcon.astro";
 </header>
 
 <style>
-  /* .header-bar-constant {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--color-background);
-    border-bottom: 1px solid var(--color-border);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
-
-
-  .header-bar {
+  .navbar-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 3rem;
-    background-color: var(--color-background);
-    border-bottom: 1px solid var(--color-border);
+  }
+  /* .header-bar {
     position: absolute;
-    width: 95%;
-    width: -webkit-fill-available;
+    right: 1px;
   } */
 </style>

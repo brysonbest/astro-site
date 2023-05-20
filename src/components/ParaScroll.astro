@@ -1,10 +1,12 @@
 ---
 import { Image, Picture } from "@astrojs/image/components";
+
+import backgroundImage from "../assets/images/cool-background.png";
 ---
 
 <div class="scroll" data-speed="3.9">
   <Image
-    src={import("../assets/images/cool-background.png")}
+    src={backgroundImage}
     widths={[100]}
     aspectRatio={0.47}
     class="coolbackground"
