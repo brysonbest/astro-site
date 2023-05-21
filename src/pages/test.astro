@@ -1,10 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import DisplayBox from "../components/DisplayBox.jsx";
+import DisplayBox from "../components/react-components/DisplayBox.jsx";
 const pageTitle = "Testing Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>Welcome to my testing page.</h2>
-  <DisplayBox client:load />
+  <DisplayBox
+    client:load
+    body="This is a test"
+    title="Hello Testing!"
+    subtitle={"Oops, I did it again!"}
+  />
 </BaseLayout>
