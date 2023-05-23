@@ -15,6 +15,13 @@
   --accent: 245 75% 54.5%;
   --accent2: 40 98.2% 43.7%;
 
+  /* Dark Mode colors */
+  --darkbkg: 68 80% 2%;
+  --darkmuted: 69 17% 92%;
+  --darktext: 66 76% 95%;
+  --darkaccent: 65 75% 45%;
+  --darkaccent2: 220 98% 56%;
+
   /* utils */
   --space-sm: clamp(0.4rem, 1.5vw, 0.8rem);
   --space-md: clamp(1rem, 2.5vw, 1.4rem);
@@ -27,7 +34,7 @@
 }
 
 html {
-  background-color: #f1f5f9;
+  background-color: hsl(var(--bkg));
   font-family: sans-serif;
 }
 
@@ -65,14 +72,14 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: hsl(var(--accent));
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
+  background-color: hsl(var(--accent));
   display: none;
   margin: 0;
 }
@@ -89,7 +96,7 @@ h1 {
 
 .nav-links a:hover,
 a:focus {
-  background-color: #ff9776;
+  background-color: hsl(var(--accent));
 }
 
 .expanded {
@@ -120,26 +127,34 @@ a:focus {
 }
 
 .dark body {
-  color: #fff;
+  color: hsl(var(--darktext));
 }
 
 .dark html {
-  color: #fff;
+  color: hsl(var(--darktext));
+}
+
+.dark {
+  color: hsl(var(--darktext));
+  background-color: hsl(var(--darkbkg));
 }
 
 .dark .nav-links a {
-  color: #fff;
+  color: hsl(var(--darktext));
+}
+
+.dark .nav-links a:hover {
+  background-color: hsl(var(--darkaccent));
 }
 
 .scroll {
   position: fixed;
 
-  /* left: 0; */
-
   z-index: -1;
 }
 
 .coolbackground {
+  content: url("../assets/images/cool-background.png");
   transform: rotate(81deg);
 
   top: 0.5rem;

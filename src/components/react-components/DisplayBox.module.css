@@ -10,6 +10,12 @@
   max-width: var(--content);
 }
 
+.dark .card {
+  background-color: hsl(var(--bkg-dark));
+  border-top: 0.1em solid hsl(var(--bkg-dark));
+  border-left: 0.1em solid hsl(var(--bkg-dark));
+}
+
 .body {
   max-width: var(--content);
 }
