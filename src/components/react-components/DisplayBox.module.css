@@ -2,18 +2,15 @@
   flex: 1 1 300px;
   position: relative;
   background-color: hsl(var(--bkg));
-  box-shadow: 2px 2px 40px hsl(var(--muted) / 0.5);
+  transition: 0.5s;
+  /* box-shadow: 2px 2px 40px hsl(var(--muted) / 0.5); */
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
   padding: var(--space-lg);
   border-radius: var(--round-lg);
   border-top: 0.1em solid white;
   border-left: 0.1em solid white;
   max-width: var(--content);
-}
-
-.dark .card {
-  background-color: hsl(var(--bkg-dark));
-  border-top: 0.1em solid hsl(var(--bkg-dark));
-  border-left: 0.1em solid hsl(var(--bkg-dark));
 }
 
 .body {

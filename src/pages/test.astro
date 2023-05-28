@@ -6,10 +6,19 @@ const pageTitle = "Testing Page";
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>Welcome to my testing page.</h2>
-  <DisplayBox
-    client:load
-    body="This is a test"
-    title="Hello Testing!"
-    subtitle={"Oops, I did it again!"}
-  />
+  <div class="card-wrapper">
+    <DisplayBox
+      client:load
+      body="This is a test"
+      title="Hello Testing!"
+      subtitle={"Oops, I did it again!"}
+    />
+
+    <DisplayBox
+      client:load
+      body="This is a test"
+      title="Hello Testing!"
+      subtitle={"Oops, I did it again!"}
+    />
+  </div>
 </BaseLayout>

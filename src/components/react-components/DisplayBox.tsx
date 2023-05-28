@@ -20,7 +20,7 @@ export default function DisplayBox({
   }
 
   return (
-    <article className={`stack-lg ${styles.card}`}>
+    <article className={`stack-lg interactive-card ${styles.card}`}>
       {image && <img src={image} alt="Random Image" className={styles.image} />}
       <div className="stack-sm">
         <h3 className={styles.title}>{title}</h3>
