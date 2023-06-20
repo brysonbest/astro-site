@@ -83,10 +83,12 @@ a:focus {
 
 .dark body {
   color: #fff;
+  background-color: black;
 }
 
-.dark html {
+.dark {
   color: #fff;
+  background-color: black;
 }
 
 .dark .nav-links a {
@@ -101,7 +103,8 @@ a:focus {
   z-index: -1;
 }
 
-.coolbackground {
+/* background image if wanted for scrolling effect? */
+/* .coolbackground {
   transform: rotate(81deg);
 
   top: 0.5rem;
@@ -112,4 +115,4 @@ a:focus {
 
 .dark .coolbackground {
   content: url("../assets/images/dark-background.png");
-}
+} */
