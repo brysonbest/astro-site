@@ -1,5 +1,15 @@
+:root {
+  --main-bg-color: #f1f5f9;
+  --main-text-color: #1a202c;
+  --main-accent-color: #ff9776;
+
+  --dark-bg-color: #1a202c;
+  --dark-text-color: #f1f5f9;
+  --dark-accent-color: #ff9776;
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--main-bg-color);
   font-family: sans-serif;
 }
 
@@ -31,14 +41,14 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: var(--main-accent-color);
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
+  background-color: var(--main-accent-color);
   display: none;
   margin: 0;
 }
@@ -53,13 +63,26 @@ h1 {
   text-transform: uppercase;
 }
 
+.nav-links button {
+  display: flex;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .nav-links a:hover,
 a:focus {
-  background-color: #ff9776;
+  background-color: var(--main-accent-color);
 }
 
 .expanded {
   display: unset;
+  position: fixed;
+  right: 1rem;
+  /* background-color: #fff; */
 }
 
 @media screen and (min-width: 636px) {
@@ -82,17 +105,18 @@ a:focus {
 }
 
 .dark body {
-  color: #fff;
-  background-color: black;
+  color: var(--dark-text-color);
+  background-color: var(--dark-bg-color);
 }
 
 .dark {
-  color: #fff;
-  background-color: black;
+  color: var(--dark-text-color);
+  background-color: var(--dark-bg-color);
 }
 
 .dark .nav-links a {
-  color: #fff;
+  color: var(--dark-text-color);
+  background-color: var(--dark-bg-color);
 }
 
 .scroll {

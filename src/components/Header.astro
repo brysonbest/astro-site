@@ -6,39 +6,41 @@ import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header>
-  <nav class="navbar-header">
-    <a href="/">
-      <PersonalLogo />
-    </a>
-    <div class="header-bar-constant">
-      <Hamburger />
-    </div>
-    <div class="header-bar">
-      <Navigation><ThemeIcon /></Navigation>
-    </div>
-  </nav>
+  <a href="/">
+    <PersonalLogo />
+  </a>
+  <div class="navbar-content">
+    <nav class="navbar-header">
+      <div class="header-bar-constant">
+        <Hamburger />
+      </div>
+      <div class="header-bar">
+        <Navigation />
+      </div>
+    </nav>
+    <ThemeIcon />
+  </div>
 </header>
 
 <style>
-  .navbar-header {
+  header {
     display: flex;
     justify-content: space-between;
   }
-  /* .header-bar {
-    position: absolute;
-    right: 1px;
-  } */
-</style>
-<!-- <header>
-  <nav>
-    <Hamburger />
-    <Navigation />
-    <ThemeIcon />
-  </nav>
-</header>
-
-<style>
-  nav {
+  .navbar-header {
     display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
   }
-</style> -->
+
+  .header-bar-constant {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .navbar-content {
+    display: flex;
+    flex-direction: row;
+  }
+</style>
