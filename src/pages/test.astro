@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import DisplayBox from "../components/react-components/DisplayBox.jsx";
+import DisplayBoxUnstyled from "../components/react-components/DisplayBoxUnstyled.jsx";
 const pageTitle = "Testing Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>Welcome to my testing page.</h2>
+  <!-- 
   <div class="card-wrapper">
     <DisplayBox
       client:load
@@ -17,6 +19,39 @@ const pageTitle = "Testing Page";
     <DisplayBox
       client:load
       body="This is a test"
+      title="Hello Testing!"
+      subtitle={"Oops, I did it again!"}
+    />
+    <div
+      class="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white mx-auto"
+    >
+      This is a test of tailwinds.
+    </div>
+
+
+  </div>  -->
+  <div class="testing-card-wrapper flex flex-wrap">
+    <DisplayBoxUnstyled
+      client:load
+      body="Test1"
+      title="Hello Testing!"
+      subtitle={"Oops, I did it again!"}
+    />
+    <DisplayBoxUnstyled
+      client:load
+      body="Test2"
+      title="Hello Testing!"
+      subtitle={"Oops, I did it again!"}
+    />
+    <DisplayBoxUnstyled
+      client:load
+      body="Test3"
+      title="Hello Testing!"
+      subtitle={"Oops, I did it again!"}
+    />
+    <DisplayBoxUnstyled
+      client:load
+      body="Test4"
       title="Hello Testing!"
       subtitle={"Oops, I did it again!"}
     />
