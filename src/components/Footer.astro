@@ -1,18 +1,59 @@
 ---
 import Social from "./Social.astro";
+const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  <Social platform="twitter" username="brysonjbest" />
-  <Social platform="github" username="brysonbest" />
-  <Social platform="github" username="brysonjbest" />
-  <Social platform="youtube" username="@brysonbest" />
+  <div class="footer-container">
+    <div id="footer-website-info">
+      <p>
+        &copy; {currentYear} Bryson Best <br />
+        <a href="/privacy-policy/">Privacy Policy</a>
+      </p>
+    </div>
+
+    <div id="footer-socials">
+      <Social platform="twitter" username="brysonjbest" />
+      <Social platform="github" username="brysonbest" />
+      <Social platform="github" username="brysonjbest" />
+      <Social platform="youtube" username="@brysonbest" />
+    </div>
+  </div>
 </footer>
 
 <style>
   footer {
     display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
     gap: 1rem;
     margin-top: 2rem;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 80ch;
+  }
+
+  #footer-website-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    width: fit-content;
+  }
+
+  #footer-socials {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
   }
 </style>

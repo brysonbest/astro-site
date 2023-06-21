@@ -26,32 +26,34 @@ const skills = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>Welcome to my personal site</h2>
+  <div>
+    <h2>Welcome to my personal site</h2>
 
-  <p>
-    I am a full-stack developer working with open-source projects to provide
-    freelance services and build accessible, inclusive products for the web.
-  </p>
-
-  <!-- <p>I offer freelance full-stack development services.</p> -->
-
-  <p>Some quick facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName} {identity.lastName}.</li>
-    <li>
-      I live in {identity.country} and currently work as a {
-        identity.occupation
-      }.
-    </li>
-    <p>Some of my hobbies include:</p>
     <p>
-      <ul>
-        {identity.hobbies.map((each) => <li>{each}</li>)}
-      </ul>
+      I am a full-stack developer working with open-source projects to provide
+      freelance services and build accessible, inclusive products for the web.
     </p>
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
+
+    <!-- <p>I offer freelance full-stack development services.</p> -->
+
+    <p>Some quick facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName} {identity.lastName}.</li>
+      <li>
+        I live in {identity.country} and currently work as a {
+          identity.occupation
+        }.
+      </li>
+      <p>Some of my hobbies include:</p>
+      <p>
+        <ul>
+          {identity.hobbies.map((each) => <li>{each}</li>)}
+        </ul>
+      </p>
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+  </div>
 </BaseLayout>

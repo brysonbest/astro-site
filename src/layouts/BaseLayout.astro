@@ -16,12 +16,16 @@ const { pageTitle } = Astro.props || {};
     <title>{pageTitle}</title>
   </head>
   <body>
-    <!-- Remove parascrolling -->
-    <!-- <ParaScroll /> -->
-    <Header />
-    <h1>Bryson Best</h1>
-    <h1>{pageTitle}</h1>
-    <slot />
+    <div id="page-content">
+      <!-- Remove parascrolling -->
+      <!-- <ParaScroll /> -->
+      <Header />
+      <article>
+        <h1>Bryson Best</h1>
+        <h1>{pageTitle}</h1>
+        <slot />
+      </article>
+    </div>
     <Footer />
     <script>
       import "../scripts/menu.js";

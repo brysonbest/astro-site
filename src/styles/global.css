@@ -1,11 +1,18 @@
 :root {
-  --main-bg-color: #f1f5f9;
+  --main-bg-color: #f8fafc;
   --main-text-color: #1a202c;
   --main-accent-color: #ff9776;
+  --secondary-accent-color: #4c1d95;
 
   --dark-bg-color: #1a202c;
   --dark-text-color: #f1f5f9;
   --dark-accent-color: #ff9776;
+
+  --color-blue: #3897d3;
+  --color-blue-hover: #1677be;
+  --color-yellow: #eef13b;
+  --color-yellow-hover: #d9e000;
+  --box-shadow: rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -14,11 +21,22 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+#page-content {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
   padding: 1rem;
   line-height: 1.5;
+  min-height: 100vh;
+}
+
+article {
+  flex: 1;
 }
 
 * {
@@ -28,6 +46,14 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+a {
+  color: var(--color-blue);
+}
+
+a:hover {
+  color: var(--color-blue-hover);
 }
 
 /* nav styles */
@@ -102,6 +128,16 @@ a:focus {
   .hamburger {
     display: none;
   }
+}
+
+footer {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+.dark footer {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
 }
 
 .dark body {
