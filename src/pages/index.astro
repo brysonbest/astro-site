@@ -1,13 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
-const pageTitle = "Home Page";
+import PageHeader from "../components/PageHeader.astro";
+const heroImage = "../assets/images/me.png";
+// const pageTitle = "Home Page";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout>
+  <PageHeader
+    subheader="Welcome to my website, my name is Bryson!"
+    text="I am a full-stack developer."
+    image={heroImage}
+    imageAlt="A picture of me"
+  >
+    <Greeting
+      slot="after-header"
+      client:load
+      messages={["Hello", "Hola", "Bonjour", "Ciao", "Hallo"]}
+    />
+  </PageHeader>
   <h2>Welcome to my personal site.</h2>
-  <Greeting
-    client:load
-    messages={["Hello", "Hola", "Bonjour", "Ciao", "Hallo"]}
-  />
 </BaseLayout>

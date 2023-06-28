@@ -1,0 +1,48 @@
+---
+import { Picture } from "@astrojs/image/components";
+const { header, subheader, text, image, imagetext } = Astro.props;
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">{header}<slot name="after-header" /></h1>
+
+      <h2 class="text-center">{subheader}</h2>
+      <h5>{text}</h5>
+    </div>
+    <div class="col-12">
+      <Picture
+        src={image}
+        alt={imagetext}
+        src={import(image)}
+        widths={[420]}
+        aspectRatio="1:1"
+        class="heroimage"
+        sizes="(max-width: 420px) 100vw, 420px"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .col-12 {
+    max-width: 38ch;
+  }
+
+  .heroimage {
+    max-width: 40ch;
+  }
+</style>

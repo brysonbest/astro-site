@@ -21,8 +21,7 @@ const { pageTitle } = Astro.props || {};
       <!-- <ParaScroll /> -->
       <Header />
       <article>
-        <h1>Bryson Best</h1>
-        <h1>{pageTitle}</h1>
+        {pageTitle ? <h1>{pageTitle}</h1> : null}
         <slot />
       </article>
     </div>
