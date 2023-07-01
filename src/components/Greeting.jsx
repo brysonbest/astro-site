@@ -1,11 +1,18 @@
 import { h } from "preact";
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 
 export default function Greeting({ messages }) {
   const randomMessage = () =>
     messages[Math.floor(Math.random() * messages.length)];
 
   const [greeting, setGreeting] = useState(randomMessage());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGreeting(randomMessage());
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
