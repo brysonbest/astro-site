@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
 import PageHeader from "../components/PageHeader.astro";
+import DisplayBox from "../components/DisplayBox.astro";
 const heroImage = "../assets/images/me.png";
 // const pageTitle = "Home Page";
 ---
@@ -20,4 +21,34 @@ const heroImage = "../assets/images/me.png";
     />
   </PageHeader>
   <h2>Welcome to my personal site.</h2>
+  <div class="hero-items">
+    <DisplayBox>
+      <p slot="box-image">Skills image</p>
+      <p slot="box-header">Skills</p>
+      <p slot="box-content">Content of SKills</p>
+    </DisplayBox>
+    <DisplayBox>
+      <p slot="box-image">Skills image</p>
+      <p slot="box-header">Skills</p>
+      <p slot="box-content">Content of SKills</p>
+    </DisplayBox>
+    <DisplayBox>
+      <p slot="box-image">Skills image</p>
+      <p slot="box-header">Skills</p>
+      <p slot="box-content">Content of SKills</p>
+    </DisplayBox>
+  </div>
 </BaseLayout>
+
+<style>
+  .hero-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+  }
+</style>
