@@ -1,5 +1,13 @@
 ---
+import Github from "../../public/Github.astro";
 import Social from "./Social.astro";
+// import github_icon from "./public/github_icon.astro";
+import GitHub from "./public/Github.astro";
+import LinkedIn from "./public/LinkedIn.astro";
+import Twitter from "./public/Twitter.astro";
+import YouTube from "./public/YouTube.astro";
+
+// import twitter_icon from "../assets/twitter_icon.svg";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -13,10 +21,10 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <div id="footer-socials">
-      <Social platform="twitter" username="brysonjbest" />
-      <Social platform="github" username="brysonbest" />
-      <Social platform="github" username="brysonjbest" />
-      <Social platform="youtube" username="@brysonbest" />
+      <Social platform="twitter" username="brysonjbest"><Twitter /></Social>
+      <Social platform="github" username="brysonbest"><GitHub /></Social>
+      <Social platform="github" username="brysonjbest"><Github /></Social>
+      <Social platform="youtube" username="@brysonbest"><YouTube /></Social>
     </div>
   </div>
 </footer>
