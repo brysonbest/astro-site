@@ -162,6 +162,10 @@ footer {
   background-color: var(--dark-bg-color);
 }
 
+.dark .social-link-icon {
+  color: white;
+}
+
 .scroll {
   position: fixed;
 

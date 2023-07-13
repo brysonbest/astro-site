@@ -1,17 +1,33 @@
 ---
-const { platform, username, icon } = Astro.props;
+const { platform, username } = Astro.props;
 ---
 
 <a href={`https://www.${platform}.com/${username}`} target="_blank">
-  <slot /> {platform}</a
+  <img
+    class="social-link-icon"
+    src={`./src/assets/images/${platform}.svg`}
+    alt={platform}
+  /></a
 >
 
 <style>
   a {
     padding: 0.5rem 1rem;
-    color: white;
-    background-color: var(--secondary-accent-color);
+    background-color: white;
     text-decoration: none;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 25px;
+    border: 1px solid;
+    border-color: var(--main-accent-color);
+  }
+
+  :global(.dark) a {
+    background-color: var(--dark-secondary-accent-color);
   }
 </style>
