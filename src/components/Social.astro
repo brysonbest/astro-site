@@ -1,11 +1,23 @@
 ---
+import { Image } from "@astrojs/image/components";
 const { platform, username } = Astro.props;
+import github from "../assets/images/github.svg";
+import linkedin from "../assets/images/linkedin.svg";
+import twitter from "../assets/images/twitter.svg";
+import youtube from "../assets/images/youtube.svg";
+
+const platforms = {
+  github,
+  linkedin,
+  twitter,
+  youtube,
+};
 ---
 
 <a href={`https://www.${platform}.com/${username}`} target="_blank">
-  <img
-    class="social-link-icon"
-    src={`./src/assets/images/${platform}.svg`}
+  <Image
+    class={"social-links-icon"}
+    src={platforms[platform]}
     alt={platform}
   /></a
 >
