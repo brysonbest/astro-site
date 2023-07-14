@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
 import PageHeader from "../components/PageHeader.astro";
 import DisplayBox from "../components/DisplayBox.astro";
+import BlogList from "../components/BlogList.astro";
 const heroImage = "../assets/images/me.png";
 // const pageTitle = "Home Page";
 ---
@@ -10,7 +11,6 @@ const heroImage = "../assets/images/me.png";
 <BaseLayout>
   <PageHeader
     subheader="Welcome to my website, my name is Bryson!"
-    text="I am a full-stack developer."
     image={heroImage}
     imageAlt="A picture of me"
   >
@@ -19,14 +19,28 @@ const heroImage = "../assets/images/me.png";
       client:load
       messages={["Hello", "Hola", "Bonjour", "Ciao", "Hallo"]}
     />
+    <>
+      I am a full-stack developer with experience in React, Vue, Node, Express,
+      MongoDB, and more! If you'd like to see some of my work, please check out
+      my <a href="/portfolio">portfolio</a>. You can also check out my <a
+        href="https://resume.creddle.io/resume/fkufvsnzdat"
+        target={"_blank"}
+        rel="noreferrer">resume</a
+      >, or contact me on <a
+        href="https://www.linkedin.com/in/bryson-best"
+        target={"_blank"}
+        rel="noreferrer">LinkedIn</a
+      > if you'd like to get in touch!
+    </>
   </PageHeader>
-  <h2>Welcome to my personal site.</h2>
   <div class="hero-items">
-    <DisplayBox>
-      <p slot="box-image">Skills image</p>
-      <p slot="box-header">Skills</p>
-      <p slot="box-content">Content of SKills</p>
-    </DisplayBox>
+    <a href="/skills">
+      <DisplayBox>
+        <p slot="box-image">Skills image</p>
+        <p slot="box-header">Skills</p>
+        <p slot="box-content">Content of SKills</p>
+      </DisplayBox>
+    </a>
     <DisplayBox>
       <p slot="box-image">Skills image</p>
       <p slot="box-header">Skills</p>
@@ -38,6 +52,10 @@ const heroImage = "../assets/images/me.png";
       <p slot="box-content">Content of SKills</p>
     </DisplayBox>
   </div>
+  <div class="recent-articles-list">
+    <h3>Recent Articles</h3>
+    <BlogList />
+  </div>
 </BaseLayout>
 
 <style>
@@ -48,7 +66,12 @@ const heroImage = "../assets/images/me.png";
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
     max-width: 1000px;
+  }
+
+  .hero-items a {
+    text-decoration: none;
+    color: inherit;
   }
 </style>

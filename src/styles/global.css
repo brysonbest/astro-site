@@ -29,7 +29,7 @@ body {
 #page-content {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
+  max-width: 120ch;
   padding: 1rem;
   line-height: 1.5;
   min-height: 100vh;
@@ -37,6 +37,28 @@ body {
 
 article {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.written-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 120ch;
+  padding: 1rem;
+  line-height: 1.5;
+  justify-content: space-around;
 }
 
 * {
