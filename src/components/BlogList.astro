@@ -1,6 +1,7 @@
 ---
 import BlogPost from "./BlogPost.astro";
 import { getCollection } from "astro:content";
+const { shortlist } = Astro.props;
 
 import "../styles/global.css";
 
@@ -9,8 +10,25 @@ const allPosts = await getCollection("posts");
 
 <ul>
   {
-    allPosts.map((post) => (
-      <BlogPost url={"/posts/" + post.slug} title={post.data.title} />
-    ))
+    shortlist
+      ? allPosts
+          .slice(0, shortlist)
+          .map((post) => (
+            <BlogPost
+              tags={post.data.tags}
+              url={"/posts/" + post.slug}
+              title={post.data.title}
+            />
+          ))
+      : allPosts.map((post) => (
+          <BlogPost
+            url={"/posts/" + post.slug}
+            title={post.data.title}
+            image={post.data.image}
+            pubDate={post.data.pubDate}
+            description={post.data.description}
+            tags={post.data.tags}
+          />
+        ))
   }
 </ul>

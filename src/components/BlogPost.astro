@@ -1,7 +1,68 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, pubDate, description, image, tags } = Astro.props;
+const publicationDate = pubDate ? pubDate.toString() : null;
 ---
 
 <li>
-  <a href={url}>{title}</a>
+  <a href={url}
+    ><div class="blog-preview-box">
+      {tags ? <h4>{tags[0]}</h4> : null}
+      <div class="blog-preview-header">
+        <h5>{title}</h5>{
+          publicationDate ? <p>{publicationDate.slice(0, 15)}</p> : null
+        }
+      </div>
+      {
+        description ? (
+          <div class="blog-preview-content">
+            {image ? <img src={image.url} width="300" alt={image.alt} /> : null}
+            <p>{description}</p>
+          </div>
+        ) : null
+      }
+    </div></a
+  >
 </li>
+
+<style>
+  li {
+    margin-bottom: 1rem;
+    list-style-type: none;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .blog-preview-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+    line-height: 0;
+  }
+
+  .blog-preview-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .blog-preview-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+</style>
