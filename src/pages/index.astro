@@ -4,6 +4,7 @@ import Greeting from "../components/Greeting";
 import PageHeader from "../components/PageHeader.astro";
 import DisplayBox from "../components/DisplayBox.astro";
 import BlogList from "../components/BlogList.astro";
+import ProjectList from "../components/ProjectList.astro";
 const heroImage = "../assets/images/me.png";
 // const pageTitle = "Home Page";
 ---
@@ -20,9 +21,12 @@ const heroImage = "../assets/images/me.png";
       messages={["Hello", "Hola", "Bonjour", "Ciao", "Hallo"]}
     />
     <>
-      I am a full-stack developer with experience in React, Vue, Node, Express,
-      MongoDB, and more! If you'd like to see some of my work, please check out
-      my <a href="/portfolio">portfolio</a>. You can also check out my <a
+      I'm a full-stack developer working with open-source projects to provide
+      freelance services and build accessible, inclusive products for the web. I
+      have experience in React, Vue, Node, Express, MongoDB, and more! I offer
+      freelance full-stack development services. If you'd like to see some of my
+      work, please check out my <a href="/portfolio">portfolio</a>. You can also
+      check out my <a
         href="https://resume.creddle.io/resume/fkufvsnzdat"
         target={"_blank"}
         rel="noreferrer">resume</a
@@ -37,24 +41,57 @@ const heroImage = "../assets/images/me.png";
     <a href="/skills">
       <DisplayBox>
         <p slot="box-image">Skills image</p>
-        <p slot="box-header">Skills</p>
-        <p slot="box-content">Content of SKills</p>
+        <p slot="box-header">Beautiful Designs</p>
+        <div slot="box-content">
+          <p>
+            Creating concise, mobile-first, accessibility-centered designs.
+          </p><p>Design Tools I Use</p>
+          <ul>
+            <li>Canva</li>
+            <li>Figma</li>
+          </ul>
+        </div>
       </DisplayBox>
     </a>
     <DisplayBox>
       <p slot="box-image">Skills image</p>
-      <p slot="box-header">Skills</p>
-      <p slot="box-content">Content of SKills</p>
+      <p slot="box-header">Accessible Code</p>
+      <div slot="box-content">
+        <p>
+          Writing functional, optimized code that puts accessibililty first.
+        </p><p>Coding Languages I Use</p>
+        <ul>
+          <li>HTML, CSS, JavaScript, TypeScript</li>
+          <li>Python, SQL, Ruby</li>
+        </ul>
+      </div>
     </DisplayBox>
     <DisplayBox>
       <p slot="box-image">Skills image</p>
-      <p slot="box-header">Skills</p>
-      <p slot="box-content">Content of SKills</p>
+      <p slot="box-header">Functional Tests</p>
+      <div slot="box-content">
+        <p>Testing applications to meet WCAG accessibiity recommendations.</p><p
+        >
+          Testing Tools I Use
+        </p>
+        <ul>
+          <li>WAVE</li>
+          <li>Cypress</li>
+        </ul>
+      </div>
     </DisplayBox>
   </div>
-  <div class="recent-articles-list">
-    <h3>Recent Articles</h3>
-    <BlogList shortlist={4} />
+
+  <div id="recent-index">
+    <div class="recent-projects-list">
+      <h3>Recent Projects</h3>
+      <ProjectList shortlist={4} />
+    </div>
+
+    <div class="recent-articles-list">
+      <h3>Recent Articles</h3>
+      <BlogList shortlist={4} />
+    </div>
   </div>
 </BaseLayout>
 
@@ -73,5 +110,16 @@ const heroImage = "../assets/images/me.png";
   .hero-items a {
     text-decoration: none;
     color: inherit;
+  }
+
+  #recent-index {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
   }
 </style>

@@ -5,17 +5,15 @@ const { shortlist } = Astro.props;
 
 import "../styles/global.css";
 
-const allPosts = await getCollection("posts");
-
-const excludeProjects = await getCollection("posts", ({ data }) => {
-  return !data.tags.includes("project");
+const projectPosts = await getCollection("posts", ({ data }) => {
+  return data.tags.includes("project");
 });
 ---
 
 <ul>
   {
     shortlist
-      ? excludeProjects
+      ? projectPosts
           .slice(0, shortlist)
           .map((post) => (
             <BlogPost
@@ -24,7 +22,7 @@ const excludeProjects = await getCollection("posts", ({ data }) => {
               title={post.data.title}
             />
           ))
-      : allPosts.map((post) => (
+      : projectPosts.map((post) => (
           <BlogPost
             url={"/posts/" + post.slug}
             title={post.data.title}
